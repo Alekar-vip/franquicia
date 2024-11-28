@@ -45,6 +45,14 @@ http://localhost:8084/franquicia/api/create
 "nombre": "MiFranquicia5"
 }
 
+## 6. ejemplos de prueba de Api 
+
+![img.png](img.png)
+
+## 7. Asi queda en base de datos
+
+![img_1.png](img_1.png)
+
 
 
 
