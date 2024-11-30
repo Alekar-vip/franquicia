@@ -1,11 +1,8 @@
 package com.alejo.franquicia.controller;
 
-import com.alejo.franquicia.models.domains.Franquicia;
 import com.alejo.franquicia.models.domains.Surcursal;
 import com.alejo.franquicia.models.mappers.SurcursalRequestResponseMapper;
-import com.alejo.franquicia.models.requests.CreateFranquiciaRequest;
 import com.alejo.franquicia.models.requests.CreateSurcursalRequest;
-import com.alejo.franquicia.models.responses.CreateFranquiciaResponse;
 import com.alejo.franquicia.models.responses.CreateSurcursalResponse;
 import com.alejo.franquicia.service.SurcursalService;
 import io.swagger.v3.oas.annotations.Operation;
@@ -18,7 +15,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
-@RequestMapping("/api")
+@RequestMapping("/surcursal")
 @RequiredArgsConstructor
 @FieldDefaults(level = AccessLevel.PRIVATE)
 public class SurcursalController {
@@ -30,7 +27,7 @@ public class SurcursalController {
     @PostMapping("/create")
     @ResponseStatus(HttpStatus.CREATED)
     @Operation(summary = "Crear una nueva franquicia")
-    public ResponseEntity<CreateSurcursalResponse> createFranquicia (@RequestBody @Valid CreateSurcursalRequest request) {
+    public ResponseEntity<CreateSurcursalResponse> createFranquicia(@RequestBody @Valid CreateSurcursalRequest request) {
         var surcursal = new Surcursal(request.nombre(), request.idFranquicia());
         var response = surcursalService.createSurcursal(surcursal);
         return ResponseEntity.status(HttpStatus.CREATED).body(surcursalRequestResponseMapper.surcursalDomainToCreateSurcursalResponse(response));

@@ -19,7 +19,7 @@ public class SurcursalServiceImpl implements SurcursalService {
 
     @Override
     public Surcursal createSurcursal(Surcursal surcursal) {
-        var entity = surcursalRepository.save(surcursalEntityMapper.surcursalEntity(surcursal));
+        var entity = surcursalRepository.save(surcursalEntityMapper.surcursalToEntity(surcursal));
         return surcursalEntityMapper.surcursalEntityToSurcursal(entity);
     }
 

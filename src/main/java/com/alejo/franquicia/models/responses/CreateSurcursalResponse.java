@@ -7,7 +7,7 @@ public record CreateSurcursalResponse(
         @Schema(description = "surcursal")
         String nombre,
 
-        @Schema(description = "1")
+        @Schema(description = "Identificador único de la franquicia asociada")
         Long idFranquicia
 ) {
 }
